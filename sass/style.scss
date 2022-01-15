@@ -1,0 +1,103 @@
+@import "./colors/colors.scss";
+
+@import "./pages/home.scss";
+
+
+$btn-color: #ff4043;
+
+.btn1{
+    width: 70px;
+    background-color: $btn-color;
+}
+
+.btn2{
+    width: 80px;
+    background-color: $btn-color;
+}
+
+/*Nesting*/
+/* .classe1 ul{
+    background-color: red;
+}
+.classe1 li{
+    background-color: blue;
+} */
+
+.classe1{
+    ul{
+        background-color: red;
+    }
+    li{
+        background-color: blue;
+    }
+    button{
+        background-color: green;
+        color: white;
+        cursor: pointer;
+        &:hover {
+            background-color: hotpink;
+            transition: 2s;
+        }
+    }
+}
+
+/*Mixing*/
+@mixin text-style ($color, $font-size, $font-family) {	color: $color;
+	font-size: $font-size;
+	font-family: $font-family;
+}
+.title{
+	h1{
+		@include text-style(#ff4043, 34px, Arial)
+	}
+
+	p{
+		@include text-style(blue, 22px, sans-serif)
+	}
+}
+
+/*Herança*/
+.btnEx{
+    width: 125px;
+    padding: 10px 0px;
+    border-radius: 20px;
+    display: block;
+    margin-top: 10px;
+    cursor: pointer;
+
+    &.btn-roxo{
+        background-color: purple;
+        color: white;
+    }
+    &.btn-amarelo{
+        background-color: yellow;
+    }
+}
+
+/*Extends*/
+.btn-azul{
+    @extend .btnEx;
+    background-color: blue;
+    color: white;
+}
+
+/*Criando função background color detect*/
+
+@function color-title($background) {
+    @if (lightness($background) > 50) {
+      @return black;
+    } @else {
+      @return white;
+    }
+  } ;
+  
+  @mixin background-color-mixin($color-bg) {
+    background-color: $color-bg;
+    color: color-title($color-bg);
+  }
+  
+  
+  /*Funções*/
+#mix{
+    @include background-color-mixin(mix(purple, yellow, 80%));
+}

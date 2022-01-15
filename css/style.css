@@ -1,0 +1,89 @@
+@charset "UTF-8";
+.textBuy {
+  font-size: 22px;
+  font-family: Arial, Helvetica, sans-serif;
+  color: #ff4043;
+}
+
+.btn {
+  padding: 10px 15px;
+  border: 1px solid red;
+  background-color: #ff4;
+}
+
+.btn1 {
+  width: 70px;
+  background-color: #ff4043;
+}
+
+.btn2 {
+  width: 80px;
+  background-color: #ff4043;
+}
+
+/*Nesting*/
+/* .classe1 ul{
+    background-color: red;
+}
+.classe1 li{
+    background-color: blue;
+} */
+.classe1 ul {
+  background-color: red;
+}
+.classe1 li {
+  background-color: blue;
+}
+.classe1 button {
+  background-color: green;
+  color: white;
+  cursor: pointer;
+}
+.classe1 button:hover {
+  background-color: hotpink;
+  transition: 2s;
+}
+
+/*Mixing*/
+.title h1 {
+  color: #ff4043;
+  font-size: 34px;
+  font-family: Arial;
+}
+.title p {
+  color: blue;
+  font-size: 22px;
+  font-family: sans-serif;
+}
+
+/*Herança*/
+.btnEx, .btn-azul {
+  width: 125px;
+  padding: 10px 0px;
+  border-radius: 20px;
+  display: block;
+  margin-top: 10px;
+  cursor: pointer;
+}
+.btnEx.btn-roxo, .btn-roxo.btn-azul {
+  background-color: purple;
+  color: white;
+}
+.btnEx.btn-amarelo, .btn-amarelo.btn-azul {
+  background-color: yellow;
+}
+
+/*Extends*/
+.btn-azul {
+  background-color: blue;
+  color: white;
+}
+
+/*Criando função background color detect*/
+/*Funções*/
+#mix {
+  background-color: #993366;
+  color: white;
+}
+
+/*# sourceMappingURL=style.css.map */
